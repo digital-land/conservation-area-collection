@@ -1,4 +1,8 @@
-# .. collection
+# Conservation area geography collection
+
+A collection of the geospatial resources used by the [conservation area](https://digital-land.github.io/conservation-area/) [geography](https://digital-land.github.io/geography) pages, and in the [development-policies](https://digital-land.github.io/dataset/local-plans) dataset.
+
+This repository also contains the pipeline for processing the into the conservation-area schema]()
 
 # Updating the collection
 
