@@ -47,3 +47,10 @@ bcb30cd5d27070adb905b1a330d3129f0d4c2fae70a1a9a82a7052806d2c50ac,http://inspire.
 0d384b928dcd6640dd25a7f6ef6fe7eed1b7a6850b6aee40f2f4250eb3d2c5df,http://geowessex.astuntechnology.com/getows.ashx?mapsource=GeoWessex/purbeck&TypeName=sac&version=1.1.0&request=GetFeature&service=WFS
 1e54db15e6aacb60345575ec20d558851d722a4711bb20b324ccb7cbffd1afa9,https://www.sedgemoor.gov.uk/media/5934/Conservation-Areas/zip/Conservation_Areas_May_2020.zip
 e6a63c92987299ca1409660135ab597f51b13f8c050421e7602c8f01054205f9,http://inspire.misoportal.com/geoserver/babergh_district_council_conservation_areas_msdc_bdc/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=babergh_district_council_conservation_areas_msdc_bdc
+131407a52e7d82e9ca4dc1dbd3c89a4442a78e3223c00c843e1fd27f647cd1e2,http://essex.astuntechnology.com/getows.ashx?mapsource=Essex/Inspire_Southend&service=WFS&SERVICE=WFS&REQUEST=GetFeature&VERSION=1.1.0&TYPENAME=sos_conservation_areas
+3e7bcbc7b099c29cf896423408043fdbd7e74e3a590fd41cec2bef02cbf65b71,https://opendata.camden.gov.uk/api/geospatial/hcxu-iumk?method=export&format=KML
+b89a17ca70af985a2b4849fb1b95d90be4b10b7f53a2846f1b9865dd07e31339,https://maps.dartmoor.gov.uk/geoserver/inspire/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=inspire_conareas
+4fc9852e72e718637117e61c7fd28be432123c9b3bf7e77fe6a3f778cc37e54b,https://inspire.nationalparks.uk/geoserver/ldnpa_inspire/ows?service=WFS&request=GetFeature&version=2.0.0&typeName=LDNPA_Conservation_Areas
+f61dbbe82f62d287f0e116f1342d923d8e897336ffedc8e0133f7bbe292d9620,https://apps.bracknell-forest.gov.uk/PublicWebsiteNew/files/DataGOVUK/ConservationAreas.zip
+f1c0048a9dbf0c716bfdbaba9e4da19870a59d95507aaa046824fcba01064a25,http://essex.astuntechnology.com/getows.ashx?mapsource=Essex/Inspire_Maldon&service=WFS&version=1.1.0&request=GetFeature&TypeName=Conservation_Area_Historic_Breakdown
+985c16bc25453fd0649f2e03b4901ee882fd008b06d25cd2ed2f2272e8bc8990,http://inspire.sthelens.gov.uk/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=INSPIRE:conservation_areas
