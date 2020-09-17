@@ -37,7 +37,6 @@ e16847d72fae8c0561a5093e1aa8f98ee64070746b682928e906c75ae9fa3671,https://data.le
 7cb1692a54e5a767247f2539cc65d2f02c0d0e47f81aef5d67db0363709a99b5,http://mapping.dudley.gov.uk/getows.ashx?mapsource=DMBC/inspire&service=WFS&version=1.1.0&Request=GetFeature&TypeName=conservation_areas
 12531744c36543206a5864c5084f9f03e5fbed3236c5b960ce8041db063a471f,https://dataworks.calderdale.gov.uk/download/conservation-areas/2d70cca3-8242-4c0f-a3e9-0eba70b4a02e/Conservation%2520areas%2520UDP%2520GJSON.json
 b9613a49ae549aefc90774f71cda0c99c11814f5d3b7c5da6ade6b2893b277b6,http://kgeo.knowsley.gov.uk:8080/geoserver/Inspire/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=Inspire:inspire_conservationarea
-b9b5ea6bcbca02fbf560859045d78b5ef21b5dffbaa7d578b01e810e0572d6c6,http://data-gedlingbc.opendata.arcgis.com/datasets/01ab9a2e304f4ed89f92b4261b1f4526_0.geojson
 5f4c5116955fcf2d4398988c3edfcd12175cd371f9bacb9f90a3129386b204c4,https://geodata.rbwm.gov.uk/geoserver/wminspire/ows?service=WFS&request=GetFeature&TypeName=wminspire:conservation_areas
 8ddf05d55c4b353a5f08b62dd3f146ea022e85271e7ccd696024142d01a28fff,https://opendata.arcgis.com/datasets/97e5c68db1b443eead00e2d4587ae547_9.geojson
 d9f930af09cef73df4db5745d5555afb5b02f51c4818bd97e804b349f8f3ba4e,http://inspire.misoportal.com/geoserver/peak_district_national_park_pdnpa-conservationarea/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=peak_district_national_park_pdnpa-conservationarea
@@ -54,3 +53,6 @@ b89a17ca70af985a2b4849fb1b95d90be4b10b7f53a2846f1b9865dd07e31339,https://maps.da
 f61dbbe82f62d287f0e116f1342d923d8e897336ffedc8e0133f7bbe292d9620,https://apps.bracknell-forest.gov.uk/PublicWebsiteNew/files/DataGOVUK/ConservationAreas.zip
 f1c0048a9dbf0c716bfdbaba9e4da19870a59d95507aaa046824fcba01064a25,http://essex.astuntechnology.com/getows.ashx?mapsource=Essex/Inspire_Maldon&service=WFS&version=1.1.0&request=GetFeature&TypeName=Conservation_Area_Historic_Breakdown
 985c16bc25453fd0649f2e03b4901ee882fd008b06d25cd2ed2f2272e8bc8990,http://inspire.sthelens.gov.uk/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=INSPIRE:conservation_areas
+b9b5ea6bcbca02fbf560859045d78b5ef21b5dffbaa7d578b01e810e0572d6c6,http://data-gedlingbc.opendata.arcgis.com/datasets/01ab9a2e304f4ed89f92b4261b1f4526_0.geojson
+a910b126bd355f5cdd90e37e657780087d2be5ecde52ba2e76bd0ed471ee7762,http://data-gedlingbc.opendata.arcgis.com/datasets/4913c7aaea034ca38382c164952ac026_0.geojson
+9352c2d696ba369c115ebeaa00900c036d91a4359157b7c9cee924b74c77a498,http://data-gedlingbc.opendata.arcgis.com/datasets/76565d3f82ce41fbb52745728cdc5d52_0.geojson
