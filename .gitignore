@@ -8,6 +8,7 @@ __pycache__/
 *.swp
 
 local
-var/tmp
-var/cache
+var
 tmp
+
+collection/resource/*.gfs
