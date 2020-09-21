@@ -1,13 +1,23 @@
-mkdir -p var/resource/
-mkdir -p var/tmp/
+#!/bin/bash
+
+# created fixed files directory
+INPUT_DIR=collection/resource/
+
+# created fixed files directory
+OUTPUT_DIR=var/resource/
+mkdir -p $OUTPUT_DIR
+
+# temporary working directory
+TMP_DIR=var/tmp/
+mkdir -p $TMP_DIR
 
 # GeoJSON coversion leaves spurious files
-rm -f collection/resource/*.gfs
+rm -f ${INPUT_DIR}*.gfs
 
-for file in collection/resource/*
+for file in ${INPUT_DIR}/*
 do
     resource=$(basename $file)
-    csv=var/resource/$resource
+    csv=${OUTPUT_DIR}${resource}
     src=$file
 
     # skip if target exists
@@ -17,7 +27,7 @@ do
     filetype=$(file -b $file)
     case "$filetype" in
     Zip*)
-        zipfile=var/tmp/$resource.zip
+        zipfile=${TMP_DIR}${resource}.zip
         ln -f $file $zipfile
         src=/vsizip/$zipfile
     esac
@@ -33,6 +43,6 @@ do
     ogr2ogr -oo DOWNLOAD_SCHEMA=NO -lco GEOMETRY=AS_WKT -lco LINEFORMAT=CRLF -f CSV $csv "$src"
     set +x
 
-    # remove temporary files
-    rm -f $file.gfs "var/resource/Layer #1.csv"
+    # remove temporary files GDAL creates
+    rm -f $file.gfs "${OUTPUT_DIR}Layer #1.csv"
 done
