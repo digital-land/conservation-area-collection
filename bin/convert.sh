@@ -17,7 +17,7 @@ rm -f ${INPUT_DIR}*.gfs
 for file in ${INPUT_DIR}/*
 do
     resource=$(basename $file)
-    csv=${OUTPUT_DIR}${resource}
+    csv=${OUTPUT_DIR}${resource}.csv
     src=$file
 
     # skip if target exists
@@ -40,7 +40,7 @@ do
     esac
 
     set -x
-    ogr2ogr -oo DOWNLOAD_SCHEMA=NO -lco GEOMETRY=AS_WKT -lco LINEFORMAT=CRLF -f CSV $csv "$src"
+    ogr2ogr -oo DOWNLOAD_SCHEMA=NO -lco GEOMETRY=AS_WKT -lco LINEFORMAT=CRLF -nln MERGED -f CSV $csv "$src"
     set +x
 
     # remove temporary files GDAL creates
