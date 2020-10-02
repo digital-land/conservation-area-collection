@@ -11,4 +11,7 @@ local
 var
 tmp
 
+# updated by makerules ..
+specification/
+
 collection/resource/*.gfs
