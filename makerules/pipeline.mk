@@ -55,5 +55,5 @@ update::
 	#curl -qsL '$(SOURCE_URL)/makerules/master/pipeline.mk' > makerules/pipeline.mk
 
 update::
-	@mkdir specification/
+	@mkdir -p specification/
 	for file in $(SPECIFICATION_FILES) ; do curl -qsL "$(SOURCE_URL)specification/master/$$file" > "$$file" ; done
