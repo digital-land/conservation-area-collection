@@ -1,0 +1,1 @@
+{"datetime":"2020-10-12T16:53:25.305578","elapsed":"104.788","exception":"ConnectionError","url":"http://inspire.misoportal.com/geoserver/babergh_district_council_conservation_areas_msdc_bdc/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=babergh_district_council_conservation_areas_msdc_bdc"}
