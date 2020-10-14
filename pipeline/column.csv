@@ -1,2 +1,5 @@
 pipeline,resource,pattern,value
-conservation-area,,OrganistionURI,OrganisationURI
+conservation-area-geography,,WKT,geometry
+conservation-area-geography,,cons_area,name
+conservation-area-geography,,CA_ref,conservation-area
+conservation-area-geography,,planningsystemid,conservation-area
