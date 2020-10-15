@@ -93,7 +93,7 @@ HARMONISED_FILES  := $(subst $(MAPPED_DIR),$(HARMONISED_DIR),$(MAPPED_FILES))
 
 $(HARMONISED_DIR)%: $(MAPPED_DIR)%
 	@mkdir -p $(HARMONISED_DIR)
-	digital-land harmonise  $< $@
+	digital-land --pipeline-name $(PIPELINE_NAME) harmonise  $< $@
 
 harmonise: $(HARMONISED_FILES)
 	@:
