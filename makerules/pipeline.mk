@@ -41,7 +41,7 @@ CONVERTED_FILES  := $(addsuffix .csv,$(subst $(RESOURCE_DIR),$(CONVERTED_DIR),$(
 
 $(CONVERTED_DIR)%.csv: $(RESOURCE_DIR)%
 	@mkdir -p $(CONVERTED_DIR)
-	digital-land convert  $< $@
+	digital-land -d convert  $< $@
 
 # resources which can't be converted automatically
 FIXED_FILES:=$(wildcard $(FIXED_DIR)*.csv)
@@ -93,7 +93,7 @@ HARMONISED_FILES  := $(subst $(MAPPED_DIR),$(HARMONISED_DIR),$(MAPPED_FILES))
 
 $(HARMONISED_DIR)%: $(MAPPED_DIR)%
 	@mkdir -p $(HARMONISED_DIR)
-	digital-land normalise  $< $@
+	digital-land harmonise  $< $@
 
 harmonise: $(HARMONISED_FILES)
 	@:
