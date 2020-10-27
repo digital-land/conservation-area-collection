@@ -18,7 +18,7 @@ LOG_FILES_TODAY:=$(LOG_DIR)$(shell date +%Y-%m-%d)/
 first-pass:: collect
 
 collect:	$(SOURCE_CSV) $(ENDPOINT_CSV)
-	digital-land collect $(ENDPOINT_CSV)
+	digital-land -n $(PIPELINE_NAME) collect $(ENDPOINT_CSV)
 
 clobber-today::
 	rm -rf $(LOG_FILES_TODAY)
