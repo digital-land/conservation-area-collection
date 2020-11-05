@@ -6,9 +6,11 @@ include makerules/development.mk
 include makerules/collection.mk
 include makerules/pipeline.mk
 
-dataset.csv: harmonise $(CACHE_DIR)/organisation.csv
+CACHE_DIR=var/cache
+
+index/dataset.csv: harmonise $(CACHE_DIR)/organisation.csv
 	dos2unix var/harmonised/*.csv
-	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource var/harmonised/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > ./dataset.csv
+	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource var/harmonised/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > .$@
 	unix2dos var/harmonised/*.csv
 
 $(CACHE_DIR)/organisation.csv:
