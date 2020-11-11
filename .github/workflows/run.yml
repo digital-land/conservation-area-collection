@@ -38,8 +38,8 @@ jobs:
         make init
         make var/cache/organisation.csv
 
-    - name: Install GDAL utilities
-      run: sudo apt-get install gdal-bin
+    - name: Install system requirements
+      run: sudo apt-get install gdal-bin dos2unix
 
     - name: Collect resources
       run: make collect
