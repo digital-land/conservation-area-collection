@@ -34,7 +34,9 @@ jobs:
         git checkout master
 
     - name: Install dependencies
-      run: make init
+      run: |
+        make init
+        make var/cache/organisation.csv
 
     - name: Install GDAL utilities
       run: sudo apt-get install gdal-bin
