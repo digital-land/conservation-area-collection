@@ -50,7 +50,8 @@ jobs:
         git diff --quiet && git diff --staged --quiet || (git commit -m "Commit files collected on $(date +%F)"; git push origin master)
 
     - name: Run Make
-      run: make -B harmonise
+      run: make -B index/dataset.csv
+
     - name: Commit harmonised files, dataset and indexes
       run: |
         git add var index
