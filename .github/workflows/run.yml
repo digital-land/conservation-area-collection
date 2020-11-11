@@ -32,11 +32,16 @@ jobs:
         git config user.name "${DLB_BOT_USERNAME}"
         git remote set-url origin https://${DLB_BOT_USERNAME}:${DLB_BOT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         git checkout master
+
     - name: Install dependencies
       run: make init
 
+    - name: Install GDAL utilities
+      run: sudo apt-get install gdal-bin
+
     - name: Collect resources
       run: make collect
+
     - name: Commit resources
       run: |
         git add collection
