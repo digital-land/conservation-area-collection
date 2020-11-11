@@ -39,7 +39,7 @@ jobs:
         make var/cache/organisation.csv
 
     - name: Install system requirements
-      run: sudo apt-get install gdal-bin dos2unix
+      run: sudo apt-get install gdal-bin dos2unix csvkit
 
     - name: Collect resources
       run: make collect
