@@ -1,0 +1,1 @@
+{"datetime":"2020-11-20T00:10:22.123431","elapsed":"120.235","exception":"ConnectTimeout","ssl-verify":true,"url":"http://inspire.halton.gov.uk/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=inspire:conservation_areas_polygon"}
