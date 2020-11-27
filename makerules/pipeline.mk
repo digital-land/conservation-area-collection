@@ -1,16 +1,10 @@
-SPECIFICATION_DIR=specification/
-SPECIFICATION_FILES=\
-	$(SPECIFICATION_DIR)dataset.csv\
-	$(SPECIFICATION_DIR)dataset-schema.csv\
-	$(SPECIFICATION_DIR)datatype.csv\
-	$(SPECIFICATION_DIR)field.csv\
-	$(SPECIFICATION_DIR)schema.csv\
-	$(SPECIFICATION_DIR)schema-field.csv\
-	$(SPECIFICATION_DIR)typology.csv
-
 .PHONY: \
 	pipeline\
-	convert
+	convert\
+	normalise\
+	harmonise\
+	transform\
+	dataset
 
 # data sources
 # collected resources
@@ -19,29 +13,37 @@ COLLECTION_DIR=collection/
 endif
 
 ifeq ($(RESOURCE_DIR),)
-RESOURCE_DIR:=collection/resource/
+RESOURCE_DIR=$(COLLECTION_DIR)resource/
 endif
 
 ifeq ($(RESOURCE_FILES),)
 RESOURCE_FILES:=$(wildcard $(RESOURCE_DIR)*)
 endif
 
+ifeq ($(FIXED_DIR),)
+FIXED_DIR=fixed/
+endif
+
+ifeq ($(CACHE_DIR),)
+CACHE_DIR=var/cache
+endif
+
 second-pass::
 	@$(MAKE) --no-print-directory pipeline
 
 # restart the make process to pick-up collected files
-pipeline::	normalise
+pipeline::	transform
 
 
 #
-#  convert collected resources into CSV
+#  convert resources into CSV
 #
 CONVERTED_DIR=var/converted/
-CONVERTED_FILES  := $(addsuffix .csv,$(subst $(RESOURCE_DIR),$(CONVERTED_DIR),$(RESOURCE_FILES)))
+CONVERTED_FILES := $(addsuffix .csv,$(subst $(RESOURCE_DIR),$(CONVERTED_DIR),$(RESOURCE_FILES)))
 
 $(CONVERTED_DIR)%.csv: $(RESOURCE_DIR)%
 	@mkdir -p $(CONVERTED_DIR)
-	digital-land -d convert  $< $@
+	digital-land convert  $< $@
 
 # resources which can't be converted automatically
 FIXED_FILES:=$(wildcard $(FIXED_DIR)*.csv)
@@ -50,73 +52,87 @@ FIXED_CONVERTED_FILES:=$(subst $(FIXED_DIR),$(CONVERTED_DIR),$(FIXED_FILES))
 
 $(FIXED_CONVERTED_FILES):
 	@mkdir -p $(CONVERTED_DIR)
-	digital-land --pipeline-name $(PIPELINE_NAME) convert $(subst $(CONVERTED_DIR),$(FIXED_DIR),$@) $@
-	@rm -f collection/resource/*.gfs
+	digital-land convert $(subst $(CONVERTED_DIR),$(FIXED_DIR),$@) $@
 
-convert: $(CONVERTED_FILES)
+convert:: $(CONVERTED_FILES)
 	@:
 
 
 #
-#  normalise CSV file spacing
+#  normalise CSV whitespace
 #
 NORMALISED_DIR=var/normalised/
-NORMALISED_FILES  := $(subst $(CONVERTED_DIR),$(NORMALISED_DIR),$(CONVERTED_FILES))
+NORMALISED_FILES := $(subst $(CONVERTED_DIR),$(NORMALISED_DIR),$(CONVERTED_FILES))
 
-$(NORMALISED_DIR)%: $(CONVERTED_DIR)%
+$(NORMALISED_DIR)%.csv: $(CONVERTED_DIR)%.csv
 	@mkdir -p $(NORMALISED_DIR)
-	digital-land --pipeline-name $(PIPELINE_NAME) normalise  $< $@
+	digital-land --pipeline-name $(PIPELINE_NAME) normalise $< $@
 
-normalise: $(NORMALISED_FILES)
+normalise:: $(NORMALISED_FILES)
 	@:
 
 
 #
-#  map column names to specification
+#  map CSV columns
 #
 MAPPED_DIR=var/mapped/
-MAPPED_FILES  := $(subst $(NORMALISED_DIR),$(MAPPED_DIR),$(NORMALISED_FILES))
+MAPPED_FILES     := $(subst $(CONVERTED_DIR),$(MAPPED_DIR),$(CONVERTED_FILES))
 
-$(MAPPED_DIR)%: $(NORMALISED_DIR)% pipeline/column.csv
+$(MAPPED_DIR)%.csv: $(NORMALISED_DIR)%.csv $(PIPELINE_DIR)
 	@mkdir -p $(MAPPED_DIR)
 	digital-land --pipeline-name $(PIPELINE_NAME) map $< $@
 
-map: $(MAPPED_FILES)
+map:: $(MAPPED_FILES)
 	@:
 
 
 #
-#  harmonise field values
+#  harmonise CSV values
 #
 HARMONISED_DIR=var/harmonised/
-HARMONISED_FILES  := $(subst $(MAPPED_DIR),$(HARMONISED_DIR),$(MAPPED_FILES))
+HARMONISED_FILES := $(subst $(CONVERTED_DIR),$(HARMONISED_DIR),$(CONVERTED_FILES))
 
-$(HARMONISED_DIR)%: $(MAPPED_DIR)%
-	@mkdir -p $(HARMONISED_DIR)
-	digital-land --pipeline-name $(PIPELINE_NAME) harmonise  $< $@
+HARMONISE_DATA=\
+	$(CACHE_DIR)/organisation.csv
 
-harmonise: $(HARMONISED_FILES)
+# a file of issues is produced for each resource
+ISSUE_DIR=issue/
+ISSUE_FILES := $(subst $(CONVERTED_DIR),$(ISSUE_DIR),$(CONVERTED_FILES))
+
+$(HARMONISED_DIR)%.csv: $(MAPPED_DIR)%.csv $(HARMONISE_DATA)
+	@mkdir -p $(HARMONISED_DIR) $(ISSUE_DIR)
+	digital-land --pipeline-name $(PIPELINE_NAME) harmonise --use-patch-callback --issue-path $(ISSUE_DIR) $< $@
+
+harmonise:: $(HARMONISED_FILES)
 	@:
 
 
 #
-#  transform CSV fields into latest model
+#  transform older fields into the latest model
 #
-TRANSFORMED_DIR=var/transformed/
-TRANSFORMED_FILES  := $(subst $(HARMONISED_DIR),$(TRANSFORMED_DIR),$(HARMONISED_FILES))
+TRANSFORMED_DIR=transformed/
+TRANSFORMED_FILES:= $(subst $(CONVERTED_DIR),$(TRANSFORMED_DIR),$(CONVERTED_FILES))
 
-$(TRANSFORMED_DIR)%: $(HARMONISED_DIR)%
+$(TRANSFORMED_DIR)%.csv: $(HARMONISED_DIR)%.csv
 	@mkdir -p $(TRANSFORMED_DIR)
-	digital-land normalise  $< $@
+	digital-land --pipeline-name $(PIPELINE_NAME) transform $< $@
 
-transform: $(TRANSFORMED_FILES)
+transform:: $(TRANSFORMED_FILES)
 	@:
+
+dataset::
+	@:
+
+# local copies of datasets
+$(CACHE_DIR)/organisation.csv:
+	@mkdir -p $(CACHE_DIR)
+	curl -qs "https://raw.githubusercontent.com/digital-land/organisation-dataset/master/collection/organisation.csv" > $@
 
 
 # update makerules from source
 update::
-	#curl -qsL '$(SOURCE_URL)/makerules/master/pipeline.mk' > makerules/pipeline.mk
+	curl -qsL '$(SOURCE_URL)/makerules/master/pipeline.mk' > makerules/pipeline.mk
 
-update::
-	@mkdir -p specification/
-	for file in $(SPECIFICATION_FILES) ; do curl -qsL "$(SOURCE_URL)specification/master/$$file" > "$$file" ; done
+commit-data::
+	git add transformed issue data
+	git diff --quiet && git diff --staged --quiet || (git commit -m "Data $(shell date +%F)"; git push origin $(BRANCH))
