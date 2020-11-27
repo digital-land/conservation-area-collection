@@ -1,16 +1,24 @@
 # currently only supports one pipeline per-makefile ..
-PIPELINE_NAME=conservation-area-geography
+PIPELINE_NAME=conservation-area
 
 include makerules/makerules.mk
 include makerules/development.mk
 include makerules/collection.mk
 include makerules/pipeline.mk
+include makerules/geospatial.mk
 
 CACHE_DIR=var/cache
 
-index/dataset.csv: harmonise $(CACHE_DIR)/organisation.csv
-	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource var/harmonised/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > $@
+data/dataset.csv: $(TRANSFORMED_FILES)
+	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource var/transformed/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > $@
 
-$(CACHE_DIR)/organisation.csv:
-	@mkdir -p $(CACHE_DIR)
-	curl -qs "https://raw.githubusercontent.com/digital-land/organisation-dataset/master/collection/organisation.csv" > $@
+CSVSTACK := $(shell command -v csvstack 2> /dev/null)
+UNAME := $(shell uname)
+
+init::
+ifndef CSVSTACK
+ifeq ($(UNAME),Darwin)
+$(error csvkit not found in PATH)
+endif
+	sudo apt-get install csvkit
+endif
