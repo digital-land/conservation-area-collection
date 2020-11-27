@@ -1,5 +1,6 @@
 class HarmoniseCallback:
-    pass
+    def init(self):
+        pass
 
 
 class PipelineCallback:
