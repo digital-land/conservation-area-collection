@@ -9,9 +9,9 @@ include makerules/geospatial.mk
 
 CACHE_DIR=var/cache
 
-data/dataset.csv: $(TRANSFORMED_FILES)
+data/dataset.csv: $(PIPELINED_FILES)
 	mkdir -p data
-	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource var/transformed/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > $@
+	csvstack -z $(shell python -c 'print(__import__("sys").maxsize)') --filenames -n resource transformed/*.csv | sed 's/^\([^\.]*\).csv,/\1,/' > $@
 
 CSVSTACK := $(shell command -v csvstack 2> /dev/null)
 UNAME := $(shell uname)
