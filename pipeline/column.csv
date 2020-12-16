@@ -21,6 +21,7 @@ conservation-area,,location,name
 conservation-area,,title,name
 conservation-area,,s_name,name
 conservation-area,,site_name,name
+conservation-area,,sitename,name
 conservation-area,,sac_name,name
 conservation-area,,ufrm_gmsconstr_polyconname,name
 conservation-area,,conservation_area_name,name
@@ -45,3 +46,6 @@ conservation-area,,gml_id,conservation-area
 conservation-area,,ogc_fid,conservation-area
 conservation-area,,PRCONSTRNTREFVAL,conservation-area
 conservation-area,,type,conservation-area
+conservation-area,,firstupdateddate,start-date
+conservation-area,,lastupdateddate,entry-date
+conservation-area,,removeddate,entry-date
