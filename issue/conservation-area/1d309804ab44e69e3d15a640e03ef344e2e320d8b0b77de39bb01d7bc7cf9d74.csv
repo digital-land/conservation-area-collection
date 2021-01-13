@@ -1,112 +1,75 @@
 row-number,field,issue-type,value
-1,reference,default,Conservation Area 23
 1,organisation,default,local-authority-eng:YOR
 1,entry-date,default,2020-11-21
-2,reference,default,Conservation Area 3
 2,organisation,default,local-authority-eng:YOR
 2,entry-date,default,2020-11-21
-3,reference,default,Conservation Area No. 22
 3,organisation,default,local-authority-eng:YOR
 3,entry-date,default,2020-11-21
-4,reference,default,Conservation Area No. 22
 4,organisation,default,local-authority-eng:YOR
 4,entry-date,default,2020-11-21
-5,reference,default,Conservation Area 28
 5,organisation,default,local-authority-eng:YOR
 5,entry-date,default,2020-11-21
-6,reference,default,Conservation Area 28
 6,organisation,default,local-authority-eng:YOR
 6,entry-date,default,2020-11-21
-7,reference,default,Conservation Area 1
 7,organisation,default,local-authority-eng:YOR
 7,entry-date,default,2020-11-21
-8,reference,default,Conservation Area 2
 8,organisation,default,local-authority-eng:YOR
 8,entry-date,default,2020-11-21
-9,reference,default,Conservation Area 4
 9,organisation,default,local-authority-eng:YOR
 9,entry-date,default,2020-11-21
-10,reference,default,Conservation Area 5
 10,organisation,default,local-authority-eng:YOR
 10,entry-date,default,2020-11-21
-11,reference,default,Conservation Area 6
 11,organisation,default,local-authority-eng:YOR
 11,entry-date,default,2020-11-21
-12,reference,default,Conservation Area 7
 12,organisation,default,local-authority-eng:YOR
 12,entry-date,default,2020-11-21
-13,reference,default,Conservation Area 9
 13,organisation,default,local-authority-eng:YOR
 13,entry-date,default,2020-11-21
-14,reference,default,Conservation Area 10
 14,organisation,default,local-authority-eng:YOR
 14,entry-date,default,2020-11-21
-15,reference,default,Conservation Area 11
 15,organisation,default,local-authority-eng:YOR
 15,entry-date,default,2020-11-21
-16,reference,default,Conservation Area 12
 16,organisation,default,local-authority-eng:YOR
 16,entry-date,default,2020-11-21
-17,reference,default,Conservation Area 13
 17,organisation,default,local-authority-eng:YOR
 17,entry-date,default,2020-11-21
-18,reference,default,Conservation Area 14
 18,organisation,default,local-authority-eng:YOR
 18,entry-date,default,2020-11-21
-19,reference,default,Conservation Area 15
 19,organisation,default,local-authority-eng:YOR
 19,entry-date,default,2020-11-21
-20,reference,default,Conservation Area 16
 20,organisation,default,local-authority-eng:YOR
 20,entry-date,default,2020-11-21
-21,reference,default,Conservation Area 17
 21,organisation,default,local-authority-eng:YOR
 21,entry-date,default,2020-11-21
-22,reference,default,Conservation Area 18
 22,organisation,default,local-authority-eng:YOR
 22,entry-date,default,2020-11-21
-23,reference,default,Conservation Area 19
 23,organisation,default,local-authority-eng:YOR
 23,entry-date,default,2020-11-21
-24,reference,default,Conservation Area 20
 24,organisation,default,local-authority-eng:YOR
 24,entry-date,default,2020-11-21
-25,reference,default,Conservation Area 21
 25,organisation,default,local-authority-eng:YOR
 25,entry-date,default,2020-11-21
-26,reference,default,Conservation Area 24
 26,organisation,default,local-authority-eng:YOR
 26,entry-date,default,2020-11-21
-27,reference,default,Conservation Area 25
 27,organisation,default,local-authority-eng:YOR
 27,entry-date,default,2020-11-21
-28,reference,default,Conservation Area 26
 28,organisation,default,local-authority-eng:YOR
 28,entry-date,default,2020-11-21
-29,reference,default,Conservation Area 27
 29,organisation,default,local-authority-eng:YOR
 29,entry-date,default,2020-11-21
-30,reference,default,Conservation Area 29
 30,organisation,default,local-authority-eng:YOR
 30,entry-date,default,2020-11-21
-31,reference,default,Conservation Area 30
 31,organisation,default,local-authority-eng:YOR
 31,entry-date,default,2020-11-21
-32,reference,default,Conservation Area 31
 32,organisation,default,local-authority-eng:YOR
 32,entry-date,default,2020-11-21
-33,reference,default,Conservation Area 32
 33,organisation,default,local-authority-eng:YOR
 33,entry-date,default,2020-11-21
-34,reference,default,Conservation Area 33
 34,organisation,default,local-authority-eng:YOR
 34,entry-date,default,2020-11-21
-35,reference,default,Conservation Area 34
 35,organisation,default,local-authority-eng:YOR
 35,entry-date,default,2020-11-21
-36,reference,default,Conservation Area 35
 36,organisation,default,local-authority-eng:YOR
 36,entry-date,default,2020-11-21
-37,reference,default,Conservation Area 8
 37,organisation,default,local-authority-eng:YOR
 37,entry-date,default,2020-11-21
