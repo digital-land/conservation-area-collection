@@ -1,53 +1,79 @@
 row-number,field,issue-type,value
+1,reference,default,Kettering Town Centre Conservation Area
 1,organisation,default,local-authority-eng:KET
 1,entry-date,default,2020-09-06
+2,reference,default,Wilbarston Conservation Area
 2,organisation,default,local-authority-eng:KET
 2,entry-date,default,2020-09-06
+3,reference,default,Ashley Conservation Area
 3,organisation,default,local-authority-eng:KET
 3,entry-date,default,2020-09-06
+4,reference,default,Barton Seagrave Conservation Area
 4,organisation,default,local-authority-eng:KET
 4,entry-date,default,2020-09-06
+5,reference,default,Brampton Ash Conservation Area
 5,organisation,default,local-authority-eng:KET
 5,entry-date,default,2020-09-06
+6,reference,default,Braybrooke Conservation Area
 6,organisation,default,local-authority-eng:KET
 6,entry-date,default,2020-09-06
+7,reference,default,Cransley Conservation Area
 7,organisation,default,local-authority-eng:KET
 7,entry-date,default,2020-09-06
+8,reference,default,Geddington Conservation Area
 8,organisation,default,local-authority-eng:KET
 8,entry-date,default,2020-09-06
+9,reference,default,Harrington Conservation Area
 9,organisation,default,local-authority-eng:KET
 9,entry-date,default,2020-09-06
+10,reference,default,Loddington Conservation Area
 10,organisation,default,local-authority-eng:KET
 10,entry-date,default,2020-09-06
+11,reference,default,Newton Conservation Area
 11,organisation,default,local-authority-eng:KET
 11,entry-date,default,2020-09-06
+12,reference,default,Little Oakley Conservation Area
 12,organisation,default,local-authority-eng:KET
 12,entry-date,default,2020-09-06
+13,reference,default,Pipewell Conservation Area
 13,organisation,default,local-authority-eng:KET
 13,entry-date,default,2020-09-06
+14,reference,default,Pytchley Conservation Area
 14,organisation,default,local-authority-eng:KET
 14,entry-date,default,2020-09-06
+15,reference,default,Rothwell Conservation Area
 15,organisation,default,local-authority-eng:KET
 15,entry-date,default,2020-09-06
+16,reference,default,Rushton Conservation Area
 16,organisation,default,local-authority-eng:KET
 16,entry-date,default,2020-09-06
+17,reference,default,Stoke Albany Conservation Area
 17,organisation,default,local-authority-eng:KET
 17,entry-date,default,2020-09-06
+18,reference,default,Thorpe Malsor Conservation Area
 18,organisation,default,local-authority-eng:KET
 18,entry-date,default,2020-09-06
+19,reference,default,Weston by Welland Conservation Area
 19,organisation,default,local-authority-eng:KET
 19,entry-date,default,2020-09-06
+20,reference,default,Cranford Conservation Area
 20,organisation,default,local-authority-eng:KET
 20,entry-date,default,2020-09-06
+21,reference,default,Weekley Conservation Area
 21,organisation,default,local-authority-eng:KET
 21,entry-date,default,2020-09-06
+22,reference,default,Warkton Conservation Area
 22,organisation,default,local-authority-eng:KET
 22,entry-date,default,2020-09-06
+23,reference,default,Grafton Underwood Conservation Area
 23,organisation,default,local-authority-eng:KET
 23,entry-date,default,2020-09-06
+24,reference,default,Desborough Conservation Area
 24,organisation,default,local-authority-eng:KET
 24,entry-date,default,2020-09-06
+25,reference,default,Burton Latimer Conservation Area
 25,organisation,default,local-authority-eng:KET
 25,entry-date,default,2020-09-06
+26,reference,default,Broughton Conservation Area
 26,organisation,default,local-authority-eng:KET
 26,entry-date,default,2020-09-06
