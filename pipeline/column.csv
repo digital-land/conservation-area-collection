@@ -72,3 +72,5 @@ conservation-area,,type,geography
 conservation-area,,firstupdateddate,start-date
 conservation-area,,lastupdateddate,entry-date
 conservation-area,,removeddate,entry-date
+conservation-area,,FID,geography
+conservation-area,,Location,name
