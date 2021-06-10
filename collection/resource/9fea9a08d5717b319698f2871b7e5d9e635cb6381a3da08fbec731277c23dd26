@@ -1,6 +1,0 @@
-<ows:ExceptionReport xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/ows http://inspire.misoportal.com:80/geoserver/schemas/ows/1.0.0/owsExceptionReport.xsd">
-  <ows:Exception exceptionCode="NoApplicableCode">
-    <ows:ExceptionText>java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Iterable
-java.lang.String cannot be cast to java.lang.Iterable</ows:ExceptionText>
-  </ows:Exception>
-</ows:ExceptionReport>
