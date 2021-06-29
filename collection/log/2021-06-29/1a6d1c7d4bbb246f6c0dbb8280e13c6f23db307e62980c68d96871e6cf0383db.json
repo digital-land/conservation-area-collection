@@ -1,1 +1,1 @@
-{"elapsed":"120.746","endpoint-url":"https://maps.stockport.gov.uk/ishare5.0.web/getows.ashx?mapsource=smbc/stockport_inspire&TypeName=conservation_areas&version=1.1.0&request=GetFeature&service=WFS","entry-date":"2021-06-29T01:01:10.174577","exception":"ConnectTimeout","ssl-verify":true}
+{"elapsed":"75.887","endpoint-url":"https://maps.stockport.gov.uk/ishare5.0.web/getows.ashx?mapsource=smbc/stockport_inspire&TypeName=conservation_areas&version=1.1.0&request=GetFeature&service=WFS","entry-date":"2021-06-29T13:10:50.012130","exception":"ConnectionError","ssl-verify":true}
