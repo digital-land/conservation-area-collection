@@ -1,0 +1,1 @@
+{"elapsed":"0.277","endpoint-url":"http://maps.southoxon.gov.uk/arcgis/services/Open_data_southoxon/MapServer/WFSServer?request=GetFeature&service=WFS&TypeName=conservation_areas","entry-date":"2021-08-13T01:03:56.569277","exception":"ConnectionError","ssl-verify":true}
