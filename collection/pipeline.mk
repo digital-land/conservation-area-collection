@@ -183,6 +183,7 @@ CONSERVATION_AREA_TRANSFORMED_FILES=\
     $(TRANSFORMED_DIR)conservation-area/84c44cfaf43f444d83cb6d64ebe8541c4e82886e677802796da9e065f5a06fa7.csv\
     $(TRANSFORMED_DIR)conservation-area/8564f073295f6736fd757f392ec7b57b97809e7b1f009dfc78cec02b754ae44f.csv\
     $(TRANSFORMED_DIR)conservation-area/865f7ac0ca9427c65555937196b3507a8da7687c3c9bd197a38d585184c70cf9.csv\
+    $(TRANSFORMED_DIR)conservation-area/87313151be4985e39a82a7ac82080eb8af8c1c8b4bc8257a4f8ba0018cc3ff0d.csv\
     $(TRANSFORMED_DIR)conservation-area/88da3f9607fced98d10b5df08a88784f9e1dc13cca790d83387a2b2a14fd0c30.csv\
     $(TRANSFORMED_DIR)conservation-area/8a6a3aaf113958d63d97dc2a2a28aac7b0fa5dd65cbb039e19f6145f65e6f912.csv\
     $(TRANSFORMED_DIR)conservation-area/8ab58ac7e34d26b60172d57b840531a964564644917dd29ba73bc01f2a9a14ad.csv\
@@ -888,6 +889,9 @@ $(TRANSFORMED_DIR)conservation-area/8564f073295f6736fd757f392ec7b57b97809e7b1f00
 	$(run-pipeline)
 
 $(TRANSFORMED_DIR)conservation-area/865f7ac0ca9427c65555937196b3507a8da7687c3c9bd197a38d585184c70cf9.csv: collection/resource/865f7ac0ca9427c65555937196b3507a8da7687c3c9bd197a38d585184c70cf9
+	$(run-pipeline)
+
+$(TRANSFORMED_DIR)conservation-area/87313151be4985e39a82a7ac82080eb8af8c1c8b4bc8257a4f8ba0018cc3ff0d.csv: collection/resource/87313151be4985e39a82a7ac82080eb8af8c1c8b4bc8257a4f8ba0018cc3ff0d
 	$(run-pipeline)
 
 $(TRANSFORMED_DIR)conservation-area/88da3f9607fced98d10b5df08a88784f9e1dc13cca790d83387a2b2a14fd0c30.csv: collection/resource/88da3f9607fced98d10b5df08a88784f9e1dc13cca790d83387a2b2a14fd0c30
