@@ -1,0 +1,1 @@
+{"elapsed":"104.826","endpoint-url":"http://inspire.misoportal.com/geoserver/mole_valley_district_council_conservation_area_polygon/wfs?service=wfs&version=2.0.0&request=GetFeature&TypeName=mole_valley_district_council_conservation_area_polygon","entry-date":"2021-09-17T01:12:31.350586","exception":"ConnectionError","ssl-verify":true}
