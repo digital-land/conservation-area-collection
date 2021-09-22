@@ -1,0 +1,1 @@
+{"elapsed":"120.182","endpoint-url":"http://inspire.misoportal.com/geoserver/waverley_borough_council_conservationarea_polygon/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=waverley_borough_council_conservationarea_polygon:waverley_borough_council_conservationarea_polygon","entry-date":"2021-09-22T01:07:49.014071","exception":"ReadTimeout","ssl-verify":true}
