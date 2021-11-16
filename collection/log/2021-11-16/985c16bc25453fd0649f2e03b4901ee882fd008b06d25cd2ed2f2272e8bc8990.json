@@ -1,0 +1,1 @@
+{"elapsed":"120.146","endpoint-url":"http://inspire.sthelens.gov.uk/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=INSPIRE:conservation_areas","entry-date":"2021-11-16T01:07:06.461824","exception":"ConnectTimeout","ssl-verify":true}
