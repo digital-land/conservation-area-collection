@@ -76,3 +76,6 @@ conservation-area,,FID,geography
 conservation-area,,Location,name
 conservation-area,,Conservati,conservation-area
 conservation-area,,More_infor,documentation-url
+conservation-area,,DATE_OF_DE,start-date
+conservation-area,,DATE_UPDAT,entry-date
+conservation-area,,UID,conservation-area
