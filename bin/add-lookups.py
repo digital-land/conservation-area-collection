@@ -14,7 +14,7 @@ csv.field_size_limit(1000000000)
 
 # ignoring resource for now ..
 def key(row):
-    return ",".join([row[f] for f in ["pipeline", "organisation", "value"]])
+    return ",".join([row.get(f, "") for f in ["pipeline", "row-number", "organisation", "value"]])
 
 
 for row in csv.DictReader(open("specification/dataset.csv")):
@@ -25,9 +25,11 @@ for row in csv.DictReader(open("specification/dataset.csv")):
 if path.exists("pipeline/lookup.csv"):
     for row in csv.DictReader(open("pipeline/lookup.csv")):
         lookup[key(row)] = row
-        e = Decimal(row["entity"])
-        if e > entity[row["pipeline"]]:
-            entity[row["pipeline"]] = e + 1
+        e = row.get("entity", "")
+        if e:
+            e = Decimal(row["entity"])
+            if e > entity[row["pipeline"]]:
+                entity[row["pipeline"]] = e + 1
 
 
 for directory in glob("transformed/*"):
@@ -42,7 +44,7 @@ for directory in glob("transformed/*"):
             lookup[key(row)] = row
 
 
-w = csv.DictWriter(open("pipeline/lookup.csv", "w", newline=""), ["pipeline", "resource", "organisation", "value", "entity"], extrasaction="ignore")
+w = csv.DictWriter(open("pipeline/lookup.csv", "w", newline=""), ["pipeline", "resource", "row-number", "organisation", "value", "entity"], extrasaction="ignore")
 w.writeheader()
 
 for key, row in lookup.items():
