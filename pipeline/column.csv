@@ -27,6 +27,7 @@ conservation-area,,ufrm_gmsconstr_polyconname,name
 conservation-area,,conservation_area_name,name
 conservation-area,,inspireid_identifier_localid,name
 conservation-area,b85206c928baa3c519e8d7f6f8c0ea378bfad2f8eeacc65b2a1c0be8250f1e9f,Name,conservation-area
+conservation-area,f617d13ef7ff061424ec50ed641f05779797ff03beb2cde6935f2a307c01ab44,objectid,IGNORE
 conservation-area,f617d13ef7ff061424ec50ed641f05779797ff03beb2cde6935f2a307c01ab44,layerreference,conservation-area
 conservation-area,,apas_code,conservation-area
 conservation-area,,CA_ref,conservation-area
