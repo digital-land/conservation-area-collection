@@ -1,0 +1,1 @@
+{"elapsed":"120.38","endpoint-url":"http://www.southampton.gov.uk/geoserver/Inspire/wfs?service=wfs&version=1.1.0&request=GetFeature&TypeName=Inspire:CONSERVATION_AREAS","entry-date":"2022-01-20T02:12:16.059700","exception":"ConnectTimeout","ssl-verify":true}
