@@ -1,7 +1,7 @@
 name: Run pipeline
 on:
   schedule:
-  - cron: 0 1 * * *
+  - cron: 30 0 * * *
   workflow_dispatch: null
 env:
   DLB_BOT_EMAIL: ${{ secrets.DLB_BOT_EMAIL }}
@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        lfs: true
     - uses: actions/setup-python@v2
       with:
         python-version: 3.8
@@ -51,5 +53,7 @@ jobs:
       run: make commit-collection
     - name: push collection files to S3
       run: make push-collection-s3
-    - name: Submit AWS batch job to run pipeline and make dataset
-      run: make pipeline-run
+    - name: Run the pipeline to make the dataset
+      run: make dataset
+    - name: Push dataset files to S3
+      run: make push-dataset-s3
