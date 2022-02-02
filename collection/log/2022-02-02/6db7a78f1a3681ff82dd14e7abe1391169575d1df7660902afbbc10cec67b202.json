@@ -1,0 +1,1 @@
+{"elapsed":"120.289","endpoint-url":"http://inspire.misoportal.com/geoserver/norwich_city_council_rpa_hbe_ca_conservation/wfs?service=wfs&version=2.0.0&request=GetFeature&TypeName=rpa_hbe_ca_conservation","entry-date":"2022-02-02T01:38:28.171628","exception":"ReadTimeout","ssl-verify":true}
