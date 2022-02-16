@@ -1,4 +1,4 @@
-pipeline,resource,field,pattern,value
+dataset,resource,field,pattern,value
 conservation-area,b85206c928baa3c519e8d7f6f8c0ea378bfad2f8eeacc65b2a1c0be8250f1e9f,name,^.*conservation area name:(.*) designated date:.*$,\1
 conservation-area,f617d13ef7ff061424ec50ed641f05779797ff03beb2cde6935f2a307c01ab44,organisation,barking and dagenham,local-authority-eng:BDG
 conservation-area,f617d13ef7ff061424ec50ed641f05779797ff03beb2cde6935f2a307c01ab44,organisation,barnet,local-authority-eng:BNE
