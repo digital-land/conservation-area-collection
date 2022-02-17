@@ -1,4 +1,4 @@
-prefix,resource,organisation,reference,entity
+prefix,resource,entry-number,organisation,reference,entity
 conservation-area,,,government-organisation:PB1164,5080,3015305
 conservation-area,,,government-organisation:PB1164,5071,3015306
 conservation-area,,,government-organisation:PB1164,5074,3015307
