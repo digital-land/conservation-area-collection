@@ -29,3 +29,4 @@ issue/
 collection/log.csv
 collection/resource.csv
 collection/pipeline.mk
+/.vs
