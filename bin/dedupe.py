@@ -67,7 +67,7 @@ for row in rows:
     key = row["entity"] + ":" + ":".join([row[f] for f in fieldnames])
     lookups[key] = row
 
-w = csv.DictWriter(open("/tmp/lookup.csv", "w", newline=""), fieldnames=fieldnames)
+w = csv.DictWriter(open("pipeline/lookup.csv", "w", newline=""), fieldnames=fieldnames)
 w.writeheader()
 for key, row in sorted(lookups.items()):
     w.writerow(row)
