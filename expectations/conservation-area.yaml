@@ -1,0 +1,215 @@
+collection_name: conservation-area
+expectations:
+    - name: "Albert Embankment conservation area"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.1198903 51.4922191)'
+      expected_result: 
+          - reference: "CA57"
+            name: "Albert Embankment"
+            organisation_entity: "192"
+    
+    - name: "Lambeth conservation area Park Hall Road"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.09303242 51.43599392)'
+      expected_result: 
+          - reference: "CA19"
+            name: "Park Hall Road"
+            organisation_entity: "192"
+    
+    - name: "Lambeth conservation area Roupell Street"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.10978987 51.50460093)'
+      expected_result: 
+          - reference: "CA21"
+            name: "Roupell Street"
+            organisation_entity: "192"
+    
+    - name: "Lambeth conservation area Streatham Lodge"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.12175931 51.41598617)'
+      expected_result: 
+          - reference: "CA62"
+            name: "Streatham Lodge"
+            organisation_entity: "192"
+    
+    - name: "Great Missenden conservation area"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.700567 51.699685)'
+      expected_result: 
+          - name: "Great Missenden"
+            organisation_entity: "67"
+      
+    - name: "Marlow conservation area (not present in Historic England Feed)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.77545416 51.56995114)'
+      expected_result: 
+          - name: "Marlow Conservation Area"
+            organisation_entity: "67"
+    
+    - name: "Wendover conservation area (smaller extent in Historic England Feed)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-0.73907841 51.75712111)'
+      expected_result: 
+          - name: "Wendover Conservation Area"
+            organisation_entity: "67"
+    
+    - name: "Hillesden Hamlet and Church End Conservation Areas (SE extent duplicate missing)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-1.00264655 51.95294220)'
+      expected_result: 
+          - name: "Hillesden Hamlet and Church End Conservation Areas"
+            organisation_entity: "67"
+            
+    - name: "Southwark conservation area (Borough High Street)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - organisation_entity
+          - reference
+      filters:
+          geometry: 'POINT(-0.0909083 51.5070023)'
+      expected_result: 
+          - name: "Borough High Street"
+            organisation_entity: "329"
+            reference: "3"
+            
+    - name: "Southwark conservation area (Sunray Estate)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+      filters:
+          geometry: 'POINT(-0.0915479 51.4582278)'
+      expected_result: 
+          - name: "Sunray Estate"
+    
+    - name: "Whitstable town conservation area"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(1.023993 51.35794)'
+      expected_result: 
+          - name: "WHITSTABLE TOWN"
+            reference: "175"
+            organisation_entity: "75"
+            
+    - name: "Canterbury conservation area publisher count"
+      expectation: count_entities
+      severity: LogWarning
+      filters:
+          organisation_entity: '75'
+      expected_result: 97
+    
+    - name: "Canterbury Conservation Area - Martyrs Field"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(1.07541065 51.27274810)'
+      expected_result: 
+          - name: "MARTYRS FIELD"
+            reference: "180"
+            organisation_entity: "75"
+            
+    - name: "Canterbury Conservation Area - Scotland Hills Lasso Query"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - name
+          - reference
+          - organisation_entity
+      filters:
+          geometry: 'POINT(1.07541065 51.27274810)'
+      expected_result: 
+          - name: "ST MARTINS HOSPITAL ( CANTERBURY )"
+            reference: "107"
+            organisation_entity: "75"
+          - name: "MOUNT HOSPITAL"
+            reference: "108"
+            organisation_entity: "75"
+          - name: "LITTLE BARTON FARM ( CANTERBURY )"
+            reference: "155"
+            organisation_entity: "75"
+            
+    - name: "Doncaster conservation area (Silverthorne Lane - should not be present)"
+      expectation: count_entities
+      severity: LogWarning
+      filters:
+          organisation_entity: '109'
+          geometry: 'POINT(-2.57510213+51.45003871)'
+      expected_result: 0
+    
+    - name:  "Doncaster conservation area (Burghwallis - should be present, from DNC)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - organisation_entity
+      filters:
+          geometry: 'POINT(-1.19075823 53.60252048)'
+      expected_result: 
+          - organisation_entity: "109"
+          
+    - name: "Doncaster conservation area (Fishlake - should be present, from DNC)"
+      expectation: compare_entities
+      severity: LogWarning
+      columns:
+          - organisation_entity
+          - name
+      filters:
+          geometry: 'POINT(-1.01009404 53.61143996)'
+      expected_result: 
+          - organisation_entity: "109"
+          - name: "Fishlake"
