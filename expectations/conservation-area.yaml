@@ -2,7 +2,7 @@ collection_name: conservation-area
 expectations:
     - name: "Albert Embankment conservation area"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -16,7 +16,7 @@ expectations:
     
     - name: "Lambeth conservation area Park Hall Road"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -30,7 +30,7 @@ expectations:
     
     - name: "Lambeth conservation area Roupell Street"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -44,7 +44,7 @@ expectations:
     
     - name: "Lambeth conservation area Streatham Lodge"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -58,7 +58,7 @@ expectations:
     
     - name: "Great Missenden conservation area"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -71,7 +71,7 @@ expectations:
       
     - name: "Marlow conservation area (not present in Historic England Feed)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - organisation_entity
@@ -83,7 +83,7 @@ expectations:
     
     - name: "Wendover conservation area (smaller extent in Historic England Feed)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - organisation_entity
@@ -95,7 +95,7 @@ expectations:
     
     - name: "Hillesden Hamlet and Church End Conservation Areas (SE extent duplicate missing)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - organisation_entity
@@ -107,7 +107,7 @@ expectations:
             
     - name: "Southwark conservation area (Borough High Street)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - organisation_entity
@@ -121,7 +121,7 @@ expectations:
             
     - name: "Southwark conservation area (Sunray Estate)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
       filters:
@@ -131,7 +131,7 @@ expectations:
     
     - name: "Whitstable town conservation area"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -145,14 +145,14 @@ expectations:
             
     - name: "Canterbury conservation area publisher count"
       expectation: count_entities
-      severity: LogWarning
+      severity: warning
       filters:
           organisation_entity: '75'
       expected_result: 97
     
     - name: "Canterbury Conservation Area - Martyrs Field"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -166,7 +166,7 @@ expectations:
             
     - name: "Canterbury Conservation Area - Scotland Hills Lasso Query"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - name
           - reference
@@ -186,7 +186,7 @@ expectations:
             
     - name: "Doncaster conservation area (Silverthorne Lane - should not be present)"
       expectation: count_entities
-      severity: LogWarning
+      severity: warning
       filters:
           organisation_entity: '109'
           geometry: 'POINT(-2.57510213+51.45003871)'
@@ -194,7 +194,7 @@ expectations:
     
     - name:  "Doncaster conservation area (Burghwallis - should be present, from DNC)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - organisation_entity
       filters:
@@ -204,7 +204,7 @@ expectations:
           
     - name: "Doncaster conservation area (Fishlake - should be present, from DNC)"
       expectation: compare_entities
-      severity: LogWarning
+      severity: warning
       columns:
           - organisation_entity
           - name
