@@ -1,0 +1,1 @@
+{"elapsed":"10.018","endpoint-url":"https://maps.dartmoor.gov.uk/geoserver/inspire/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=inspire_conareas","entry-date":"2023-02-03T00:05:00.531494","exception":"ConnectionError","ssl-verify":true}
