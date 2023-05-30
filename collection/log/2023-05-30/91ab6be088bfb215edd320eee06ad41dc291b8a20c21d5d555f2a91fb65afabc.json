@@ -1,0 +1,1 @@
+{"elapsed":"120.172","endpoint-url":"https://webgis1.barrowbc.gov.uk/inspire/wfs?service=WFS&version=2.0.0&request=GetFeature&TypeName=INSPIRE:CONSERVATIONARE","entry-date":"2023-05-30T00:06:09.827972","exception":"ConnectTimeout","ssl-verify":true}
