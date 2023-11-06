@@ -76,3 +76,4 @@ b7a883112c2d06e9d0e486ddc2aa1a1c345284fcc4f56feaf72bcfcf5e27fa24,https://service
 fbe35483bb292b89c811a2db835df9dd5212ee1093daebd1f6b811d620643c1b,https://services-eu1.arcgis.com/xk4RA36G57mVH7Aw/ArcGIS/rest/services/Conservation_Areas_National_Planning_Map_view/FeatureServer/0/query?where=1%3D1&f=geojson&outFields=*,,,2023-10-10T10:10:10:27Z,,
 0e8ed333f367c5f2fde2d103d0e2b9404dfb130796fa7e921d994af83f758606,https://datamillnorth.org/download/2rlwm/5785bd0c-b3d2-4724-b7f4-8b6f3ff231c9/conservation_areas.csv,,,2023-10-10,2023-10-06,
 8bb6411b1390f7cc8e4e4a4005eaf9da9f0952d88018e223c2d3a43df52aa877,https://medwaymaps.medway.gov.uk/WFS/wfs.exe?service=WFS&version=2.0.0&request=GetFeature&TypeNames=DVL_CONSERVATION_AREAS,,wfs,2023-10-18T09:09:31:53Z,,
+1cafec4102c43a9e95f54bd36453240251c7741d7d15de7f742ceafac750f8e2,https://open.barnet.gov.uk/download/20yo8/c6n/conservation_area.gpkg,,,2023-11-06,2023-11-04,
