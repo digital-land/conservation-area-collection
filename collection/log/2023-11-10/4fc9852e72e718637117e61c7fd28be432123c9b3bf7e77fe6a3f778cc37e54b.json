@@ -1,0 +1,1 @@
+{"elapsed":"10.025","endpoint-url":"https://inspire.nationalparks.uk/geoserver/ldnpa_inspire/ows?service=WFS&request=GetFeature&version=2.0.0&typeName=LDNPA_Conservation_Areas","entry-date":"2023-11-10T00:04:49.038188","exception":"ConnectionError","ssl-verify":true}
