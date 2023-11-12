@@ -1,0 +1,1 @@
+{"elapsed":"0.056","endpoint-url":"http://inspire.misoportal.com/geoserver/bolsover_district_council_bdc_conservation_areas/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=bolsover_district_council_bdc_conservation_areas","entry-date":"2023-11-12T00:06:17.221337","exception":"ConnectionError","ssl-verify":true}
