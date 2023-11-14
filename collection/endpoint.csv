@@ -77,3 +77,4 @@ fbe35483bb292b89c811a2db835df9dd5212ee1093daebd1f6b811d620643c1b,https://service
 0e8ed333f367c5f2fde2d103d0e2b9404dfb130796fa7e921d994af83f758606,https://datamillnorth.org/download/2rlwm/5785bd0c-b3d2-4724-b7f4-8b6f3ff231c9/conservation_areas.csv,,,2023-10-10,2023-10-06,
 8bb6411b1390f7cc8e4e4a4005eaf9da9f0952d88018e223c2d3a43df52aa877,https://medwaymaps.medway.gov.uk/WFS/wfs.exe?service=WFS&version=2.0.0&request=GetFeature&TypeNames=DVL_CONSERVATION_AREAS,,wfs,2023-10-18T09:09:31:53Z,,
 1cafec4102c43a9e95f54bd36453240251c7741d7d15de7f742ceafac750f8e2,https://open.barnet.gov.uk/download/20yo8/c6n/conservation_area.gpkg,,,2023-11-06,2023-11-04,
+a09608d26986c205de7ab8dc54b5d76c776ca236a9ecf9d920eae07995c06cc8,https://maps.birmingham.gov.uk/server/rest/services/planx/PlanX/FeatureServer/4/query?where=1=1&outfields=*&f=geojson,,wfs,2023-11-14,2023-11-14,
