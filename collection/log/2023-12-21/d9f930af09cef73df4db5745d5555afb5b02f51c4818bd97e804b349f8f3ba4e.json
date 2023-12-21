@@ -1,0 +1,1 @@
+{"elapsed":"104.7","endpoint-url":"http://inspire.misoportal.com/geoserver/peak_district_national_park_pdnpa-conservationarea/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=peak_district_national_park_pdnpa-conservationarea","entry-date":"2023-12-21T00:06:32.638951","exception":"ConnectionError","ssl-verify":true}
