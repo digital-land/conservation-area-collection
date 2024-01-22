@@ -82,3 +82,4 @@ a09608d26986c205de7ab8dc54b5d76c776ca236a9ecf9d920eae07995c06cc8,https://maps.bi
 29bfaf49f0d5deaaa3b0ca0ceac987c3a21effc034ad5ad4551e3d7e1ed2e53f,https://services3.arcgis.com/lCzPKKaGs7lhrnrV/ArcGIS/rest/services/Planning_Portal_Conservation_Area_281123/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson,,,2023-12-01T14:14:52:30Z,,
 9247d952f3d1a3ad3ca513bb5c0169ffb7bd9b54c285fbc24eedf738fe17a9d5,https://maps.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/planx&service=WFS&version=1.1.0&request=GetFeature&Typename=conservationareas,,,2023-12-04T12:12:06:16Z,,
 54bf142531133bc131b927d27c30fed857d3a3aab0b80737fe26ab0aba4610de,https://tewkesburybc.s3.eu-west-2.amazonaws.com/geojson/conservation-area.geojson,,,2024-01-17,2023-10-21,
+64b205f56014fc81435e61bb55745dbfac6fe7c87dcd13cb391262eb73a8c13b,https://gis.westberks.gov.uk/server/rest/services/Layers/LPA_CONSERVATION_AREAS/FeatureServer/0/query?where=1%3D1&f=geojson&outFields=*,,,2024-01-22,2023-12-18,
