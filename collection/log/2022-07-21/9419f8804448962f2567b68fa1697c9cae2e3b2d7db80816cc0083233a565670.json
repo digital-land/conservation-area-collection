@@ -1,1 +1,0 @@
-{"elapsed":"120.249","endpoint-url":"https://maps.buckscc.gov.uk/arcgis/services/PLANNING/RIPA_BOPS/MapServer/WFSServer?service=WFS&version=2.0.0&request=GetFeature&typeName=PLANNING_RIPA_BOPS:Conservation_Areas&outputFormat=GML2","entry-date":"2022-07-21T00:05:15.454298","exception":"ConnectTimeout","ssl-verify":true}

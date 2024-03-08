@@ -1,1 +1,0 @@
-{"elapsed":"1.316","endpoint-url":"https://map.salford.gov.uk/geoserver/INSPIRE/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=INSPIRE:IHM_CONSERVATIONAREAS&srsName=EPSG:4326&outputFormat=application/json","entry-date":"2023-10-12T00:05:51.359679","exception":"ConnectionError","ssl-verify":true}

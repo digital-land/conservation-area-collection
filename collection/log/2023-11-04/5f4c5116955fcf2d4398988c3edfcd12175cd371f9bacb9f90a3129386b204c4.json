@@ -1,1 +1,0 @@
-{"elapsed":"120.919","endpoint-url":"https://geodata.rbwm.gov.uk/geoserver/wminspire/ows?service=WFS&request=GetFeature&TypeName=wminspire:conservation_areas","entry-date":"2023-11-04T00:04:44.759793","exception":"ConnectTimeout","ssl-verify":true}

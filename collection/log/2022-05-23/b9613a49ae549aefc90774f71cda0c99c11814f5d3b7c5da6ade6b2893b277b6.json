@@ -1,1 +1,0 @@
-{"elapsed":"120.2","endpoint-url":"http://kgeo.knowsley.gov.uk:8080/geoserver/Inspire/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAME=Inspire:inspire_conservationarea","entry-date":"2022-05-23T00:05:48.433022","exception":"ConnectTimeout","ssl-verify":true}
