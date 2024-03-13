@@ -1,1 +1,0 @@
-{"elapsed":"0.076","endpoint-url":"https://maps.trafford.gov.uk/getows.ashx?mapsource=Trafford/inspire&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=conservation_areas","entry-date":"2022-06-08T00:05:06.075326","exception":"ConnectionError","ssl-verify":true}

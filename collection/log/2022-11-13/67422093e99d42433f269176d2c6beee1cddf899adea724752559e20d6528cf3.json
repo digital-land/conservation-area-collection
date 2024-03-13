@@ -1,1 +1,0 @@
-{"elapsed":"60.781","endpoint-url":"http://map.cornwall.gov.uk/arcgis/services/inspire/inspire_historic/MapServer/WFSServer?service=WFS&version=1.1.0&Request=GetFeature&TypeName=inspire_inspire_historic:conservation_areas","entry-date":"2022-11-13T00:06:43.774858","exception":"ConnectionError","ssl-verify":true}

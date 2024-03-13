@@ -1,1 +1,0 @@
-{"elapsed":"120.565","endpoint-url":"http://maps.kettering.gov.uk/inspirewfs/wfs.impl?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=KBC:Conservation_Areas&TYPENAME=KBC:Conservation_Areas","entry-date":"2024-02-02T00:04:58.838180","exception":"ConnectTimeout","ssl-verify":true}

@@ -1,1 +1,0 @@
-{"elapsed":"0.278","endpoint-url":"https://inspire.wycombe.gov.uk/getows.ashx?Mapsource=Wycombe/Inspire&service=WFS&version=1.1.0&Request=GetFeature&TypeName=csac_new","entry-date":"2024-02-06T00:04:07.066055","exception":"ConnectionError","ssl-verify":true}

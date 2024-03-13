@@ -30,3 +30,5 @@ collection/log.csv
 collection/resource.csv
 collection/pipeline.mk
 /.vs
+# Logs are in S3
+collection/log

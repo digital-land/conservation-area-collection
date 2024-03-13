@@ -1,1 +1,0 @@
-{"elapsed":"0.775","endpoint-url":"http://myeebc.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=conservationareas","entry-date":"2022-05-20T00:05:39.246333","exception":"ConnectionError","ssl-verify":true}
