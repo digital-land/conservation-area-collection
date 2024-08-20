@@ -1,0 +1,7 @@
+dataset,entity,field,operation,value,notes
+conservation-area,44000001,organisation-entity,matches,278,
+conservation-area,44000001,reference,matches,CA18,
+conservation-area,44000001,name,matches,Napsbury,
+conservation-area,44009844,name,matches,AUSTIN VILLAGE CONSERVATION AREA,
+conservation-area,44002411,reference,matches,CA11,
+conservation-area,44002411,organisation-entity,matches,48,
