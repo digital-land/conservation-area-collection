@@ -90,11 +90,13 @@ endif
 define run-pipeline
 	mkdir -p $(@D) $(ISSUE_DIR)$(notdir $(@D)) $(COLUMN_FIELD_DIR)$(notdir $(@D)) $(DATASET_RESOURCE_DIR)$(notdir $(@D))
 	digital-land ${DIGITAL_LAND_OPTS} --dataset $(notdir $(@D)) --pipeline-dir $(PIPELINE_DIR) $(DIGITAL_LAND_FLAGS) pipeline $(1) --organisation-path $(CACHE_DIR)organisation.csv --issue-dir $(ISSUE_DIR)$(notdir $(@D)) --column-field-dir $(COLUMN_FIELD_DIR)$(notdir $(@D)) --dataset-resource-dir $(DATASET_RESOURCE_DIR)$(notdir $(@D)) $(PIPELINE_FLAGS) $< $@
+	python bin/csv_to_parquet.py --dataset  $(notdir $(@D)) --resource $<
 endef
 
 define build-dataset =
 	mkdir -p $(@D)
 	time digital-land ${DIGITAL_LAND_OPTS} --dataset $(notdir $(basename $@)) dataset-create --output-path $(basename $@).sqlite3 --organisation-path $(CACHE_DIR)organisation.csv --issue-dir $(ISSUE_DIR) --column-field-dir=$(COLUMN_FIELD_DIR) --dataset-resource-dir $(DATASET_RESOURCE_DIR) $(^)
+	time python bin/make_parquet_dir.py --input-dir $(TRANSFORMED_DIR)$(notdir $(basename $@)) --output-dir $(DATASET_DIR)pq/$(notdir $(basename $@))
 	time datasette inspect $(basename $@).sqlite3 --inspect-file=$(basename $@).sqlite3.json
 	time digital-land ${DIGITAL_LAND_OPTS} --dataset $(notdir $(basename $@)) dataset-entries $(basename $@).sqlite3 $@
 	mkdir -p $(FLATTENED_DIR)
@@ -182,6 +184,9 @@ datasette:	metadata.json
 	--setting sql_time_limit_ms 5000 \
 	--load-extension $(SPATIALITE_EXTENSION) \
 	--metadata metadata.json
+
+datasette-pq:	
+	datasette --metadata metadata.json
 
 FALLBACK_CONFIG_URL := https://files.planning.data.gov.uk/config/pipeline/$(COLLECTION_NAME)/
 
