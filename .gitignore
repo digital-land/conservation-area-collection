@@ -20,6 +20,9 @@ var/
 # ignore updated specification files
 specification/
 
+# ignore flattended directory
+flattened
+
 # stored in S3
 collection/resource/
 dataset/
