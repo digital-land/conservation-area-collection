@@ -23,7 +23,7 @@ def csv_to_pq(dataset,resource):
         os.remove(output_path)
 
     # Define the chunk size for reading the CSV file
-    chunk_size = 200  # Number of rows per chunk
+    chunk_size = 1000000  # Number of rows per chunk
 
     # Open a CSV reader with PyArrow
     # csv_reader = pv.open_csv(input_path, read_options=pv.ReadOptions(block_size=chunk_size))
