@@ -147,11 +147,11 @@ def compile_entity(input_path,output_path,dataset):
 
     # null fields - list of fields which are not  present in the fact tables which have 
     # to be in the entity table as a column
-    null_fields = [field for field in entity_fields if field not in (distinct_fields + ['entity','dataset','typology','json','organisation_entity'])]
+    null_fields = [field for field in entity_fields if field not in (distinct_fields + ['entity','dataset','typology','json','organisation_entity','orrganisation'])]
 
     # select fields - a list  of fields which have to be selected directly from the pivoted table
     # these are entity fields that are not null fields or a few special ones
-    select_fields =  [field for field in entity_fields if field not in null_fields + ['json','organisation_entity','dataset','typology']] + ['organisation']
+    select_fields =  [field for field in entity_fields if field not in null_fields + ['json','organisation_entity','dataset','typology','organisation']]
 
     # set fields
     fields_to_include=[
@@ -185,25 +185,36 @@ def compile_entity(input_path,output_path,dataset):
 
     # Collate list of fields which don't exist  but  need to be in the ifnal table
     # null_fields = [field for field in entity_table_fields if (field not in field_list) and (field not in defined_fields) and (field not in ['json','entity','entry_date'])]
-    select_statement = ', '.join([f"{field}" for field in select_fields])
+    select_statement = ', '.join([f"t1.{field}" for field in select_fields])
     null_fields_statement = ', '.join([f"NULL::VARCHAR AS {field}" for field in null_fields])
     json_statement = ', '.join([
-        f"CASE WHEN {field} IS NOT NULL THEN '{field}' ELSE NULL END, {field}"
+        f"CASE WHEN t1.{field} IS NOT NULL THEN '{field}' ELSE NULL END, t1.{field}"
         for field in json_fields
     ])
+
+    # define organisation query
+    org_csv = './var/cache/organisation.csv'
+    org_query = f"""
+        SELECT * FROM read_csv_auto('{org_csv}')
+    """
     # get a list and statement ready for the fields which have values in the unpivoted fact table
     # fact_fields = 
             # {json_statement}
             # # {null_fields_statement},
             # {select_statement}
+    # json_object({json_statement}) as json
     print(select_statement)
     sql = f"""
         COPY (
             SELECT '{dataset}' as dataset,
             '{dataset}' as typology,
+            t2.entity as organisation_entity,
             {select_statement},
+            {null_fields_statement},
             json_object({json_statement}) as json
-            FROM ({pivot_query}) 
+            FROM ({pivot_query}) as t1
+            LEFT JOIN ({org_query}) as t2
+            on t1.organisation = t2.organisation
             ) TO '{output_path}' (FORMAT PARQUET);
     """
     print(sql)
