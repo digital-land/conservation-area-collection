@@ -112,6 +112,46 @@ def compile_entity(input_path,output_path,dataset):
     
     # make output dir
     output_path.parent.mkdir(parents=True,exist_ok=True)
+    conn = duckdb.connect()
+
+    # entity fields - list of all fields int he entity table
+    entity_fields = [
+        'dataset',
+        'end_date',
+        'entity',
+        'entry_date',
+        'geojson',
+        'geometry',
+        'json',
+        'name',
+        'organisation_entity',
+        'point',
+        'prefix',
+        'reference',
+        'start_date',
+        'typology'
+    ]
+    # fact fields - list of fields from fact table
+
+    # distinct_fields - list of fields in the field field in fact
+    rows = conn.execute(
+        f"""SELECT DISTINCT REPLACE(field,'-','_')
+        FROM parquet_scan('{str(input_path)}')"""
+    ).fetchall()
+    # print(distinct_fields)
+    distinct_fields = [row[0] for row in rows]
+
+    # json fields - list of fields which are present in the fact table which
+    # do not exist separately in the entity table
+    json_fields = [field for field in distinct_fields if field not in entity_fields]
+
+    # null fields - list of fields which are not  present in the fact tables which have 
+    # to be in the entity table as a column
+    null_fields = [field for field in entity_fields if field not in (distinct_fields + ['entity','dataset','typology','json','organisation_entity'])]
+
+    # select fields - a list  of fields which have to be selected directly from the pivoted table
+    # these are entity fields that are not null fields or a few special ones
+    select_fields =  [field for field in entity_fields if field not in null_fields + ['json','organisation_entity','dataset','typology']] + ['organisation']
 
     # set fields
     fields_to_include=[
@@ -121,18 +161,6 @@ def compile_entity(input_path,output_path,dataset):
     ]
     fields_str = ', '.join(fields_to_include)
 
-    # Connect to DuckDB (in-memory or file-based if you prefer)
-    con = duckdb.connect()
-
-    # Get a list of fields this could be  a burden for larger data
-    distinct_fields = con.execute(
-        f"""SELECT DISTINCT REPLACE(field,'-','_') 
-        FROM parquet_scan('{str(input_path)}')"""
-    ).fetchall()
-
-    # Convert the result to a Python list
-    field_list = [row[0] for row in distinct_fields]
-    json_fields = [field for field in field_list]
     # Write a SQL query to load all parquet files from the directory, group by a field, and get the latest record
     query = f"""
         SELECT {fields_str}, 
@@ -149,75 +177,37 @@ def compile_entity(input_path,output_path,dataset):
         ) ON REPLACE(field,'-','_')
         USING MAX(value)
     """
-    
-    
 
-    entity_table_fields = [
-        'dataset',
-        'end_date',
-        'entity',
-        'entry_date',
-        'geojson',
-        'geometry',
-        'json',
-        'name',
-        'organisation_entity',
-        'point',
-        'prefix',
-        'reference',
-        'start_date',
-        'typology'
-    ]
-
-    # I don't like this name but it's the fields in the entity 
-    # table which we need to manually define not from facts
-    defined_fields = [
-        'dataset',
-        'typology',
-        'organisation_entity',
-    ]
-    #
-    json_case_statements = ','.join([
-        f"CASE WHEN {field} IS NOT NULL THEN '{field}' ELSE NULL END, {field},"
-        for field in json_fields
-    ])
+    # now use the field lists produced above to create specific statements to:
+    # add null columns which are missing
+    # include columns in the json statement
     # print(json_case_statements)
 
     # Collate list of fields which don't exist  but  need to be in the ifnal table
-    null_fields = [field for field in entity_table_fields if (field not in field_list) and (field not in defined_fields) and (field not in ['json','entity','entry_date'])]
+    # null_fields = [field for field in entity_table_fields if (field not in field_list) and (field not in defined_fields) and (field not in ['json','entity','entry_date'])]
+    select_statement = ', '.join([f"{field}" for field in select_fields])
     null_fields_statement = ', '.join([f"NULL::VARCHAR AS {field}" for field in null_fields])
-    
+    json_statement = ', '.join([
+        f"CASE WHEN {field} IS NOT NULL THEN '{field}' ELSE NULL END, {field}"
+        for field in json_fields
+    ])
     # get a list and statement ready for the fields which have values in the unpivoted fact table
     # fact_fields = 
-
-    # make null fields for everything  we  don't have a value for 
-    # con.execute(f"""
-    # COPY (
-    #     SELECT end_date,
-    #     entity,
-    #     entry_date,
-    #     geometry,
-    #     NULL::VARCHAR AS geojson,
-    #     '{dataset}' AS dataset,        
-    #     name,
-    #     organisation,
-    #     point,
-    #     prefix,
-    #     reference,
-    #     start_date,
-    #     FROM ({pivot_query})
-    #     ) TO '{output_path}' (FORMAT PARQUET);
-    # """)    
-    con.execute(f"""
-    COPY (
-        SELECT entity,
-        entry_date,
-        {null_fields_statement},
-        {}
-                
-        FROM ({pivot_query}) 
-        ) TO '{output_path}' (FORMAT PARQUET);
-    """)   
+            # {json_statement}
+            # # {null_fields_statement},
+            # {select_statement}
+    print(select_statement)
+    sql = f"""
+        COPY (
+            SELECT '{dataset}' as dataset,
+            '{dataset}' as typology,
+            {select_statement},
+            json_object({json_statement}) as json
+            FROM ({pivot_query}) 
+            ) TO '{output_path}' (FORMAT PARQUET);
+    """
+    print(sql)
+    conn.execute(sql)
     # con.execute(f"""
     # COPY (  
     #     {pivot_query}
