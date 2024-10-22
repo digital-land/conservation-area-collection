@@ -41,14 +41,16 @@ for point, l in entity_point.items():
         if entity in old_entities:
             print(entity, "deprecated?")
         for e in l[1:]:
-            old_entities[e] = { 
+            old_entities[e] = {
                 "old-entity": e,
                 "status": "301",
                 "entity": entity,
             }
 
 fieldnames = ["old-entity", "status", "entity"]
-w = csv.DictWriter(open("pipeline/old-entity.csv", "w", newline=""), fieldnames=fieldnames)
+w = csv.DictWriter(
+    open("pipeline/old-entity.csv", "w", newline=""), fieldnames=fieldnames
+)
 w.writeheader()
 for e, row in sorted(old_entities.items()):
     w.writerow(row)
@@ -62,7 +64,14 @@ for row in csv.DictReader(open("pipeline/lookup.csv")):
 
 
 lookups = {}
-fieldnames = ["prefix","resource","entry-number","organisation","reference","entity"]
+fieldnames = [
+    "prefix",
+    "resource",
+    "entry-number",
+    "organisation",
+    "reference",
+    "entity",
+]
 for row in rows:
     key = row["entity"] + ":" + ":".join([row[f] for f in fieldnames])
     lookups[key] = row

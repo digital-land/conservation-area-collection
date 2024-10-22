@@ -6,10 +6,17 @@ import re
 from decimal import Decimal
 
 lookups = {}
-fieldnames = ["prefix","resource","entry-number","organisation","reference","entity"]
+fieldnames = [
+    "prefix",
+    "resource",
+    "entry-number",
+    "organisation",
+    "reference",
+    "entity",
+]
 
 # take from specification ..
-entity_min = 44000000 
+entity_min = 44000000
 entity_max = 44999999
 entity_high = entity_min
 renumbered = {}
