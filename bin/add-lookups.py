@@ -12,9 +12,12 @@ datasets = {}
 
 csv.field_size_limit(1000000000)
 
+
 # ignoring resource for now ..
 def key(row):
-    return ",".join([row.get(f, "") for f in ["pipeline", "row-number", "organisation", "value"]])
+    return ",".join(
+        [row.get(f, "") for f in ["pipeline", "row-number", "organisation", "value"]]
+    )
 
 
 for row in csv.DictReader(open("specification/dataset.csv")):
@@ -44,14 +47,18 @@ for directory in glob("transformed/*"):
             lookup[key(row)] = row
 
 
-w = csv.DictWriter(open("pipeline/lookup.csv", "w", newline=""), ["pipeline", "resource", "row-number", "organisation", "value", "entity"], extrasaction="ignore")
+w = csv.DictWriter(
+    open("pipeline/lookup.csv", "w", newline=""),
+    ["pipeline", "resource", "row-number", "organisation", "value", "entity"],
+    extrasaction="ignore",
+)
 w.writeheader()
 
 for key, row in lookup.items():
     if not row["value"]:
         continue
 
-    if not  row.get("entity", ""):
+    if not row.get("entity", ""):
         dataset = row["pipeline"]
         row["entity"] = entity[dataset]
         entity[dataset] = entity[dataset] + 1
